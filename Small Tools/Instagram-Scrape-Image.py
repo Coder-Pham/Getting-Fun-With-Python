@@ -2,19 +2,19 @@ from selenium import webdriver
 from time import sleep
 from urllib import urlretrieve
 
-driver = webdriver.Chrome('/home/coderpham/chromedriver')		<--- Need to download chromedriver and put its path here
-driver.get('https://www.instagram.com/accounts/login/?hl=vi')	<--- Login page in VNese
+driver = webdriver.Chrome('/home/coderpham/chromedriver')		# <--- Need to download chromedriver and put its path here
+driver.get('https://www.instagram.com/accounts/login/?hl=vi')	# <--- Login page in VNese
 
 usr = driver.find_element_by_name('username')
-usr.send_keys('foo@gmail.com')									<--- Put your username 
+usr.send_keys('foo@gmail.com')									# <--- Put your username 
 
 pwd = driver.find_element_by_name('password')
-pwd.send_keys('abcd')											<--- Put your password here
+pwd.send_keys('abcd')											# <--- Put your password here
 
 sign_in = driver.find_element_by_tag_name('button')
 sign_in.click()
 
-driver.get('https://www.instagram.com/.....')					<--- Put instagram page which you need to scrape 
+driver.get('https://www.instagram.com/.....')					# <--- Put instagram page which you need to scrape 
 
 posts = driver.find_element_by_class_name('_fd86t')
 if ',' in posts.text:
