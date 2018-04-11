@@ -13,6 +13,7 @@ pwd.send_keys('abcd')											# <--- Put your password here
 
 sign_in = driver.find_element_by_tag_name('button')
 sign_in.click()
+sleep(1)
 
 driver.get('https://www.instagram.com/.....')					# <--- Put instagram page which you need to scrape 
 
