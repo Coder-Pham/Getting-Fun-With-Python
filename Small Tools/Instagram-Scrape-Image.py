@@ -18,8 +18,8 @@ sleep(1)
 driver.get('https://www.instagram.com/.....')					# <--- Put instagram page which you need to scrape 
 
 posts = driver.find_element_by_class_name('_fd86t')
+posts = posts.text
 if ',' in posts.text:
-    posts = posts.text
     posts = posts.replace(',','')
 posts = int(posts)
 
