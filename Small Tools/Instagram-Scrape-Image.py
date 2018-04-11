@@ -19,7 +19,7 @@ driver.get('https://www.instagram.com/.....')					# <--- Put instagram page whic
 
 posts = driver.find_element_by_class_name('_fd86t')
 posts = posts.text
-if ',' in posts.text:
+if ',' in posts:
     posts = posts.replace(',','')
 posts = int(posts)
 
