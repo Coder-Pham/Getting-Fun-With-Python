@@ -33,6 +33,7 @@ sign_in.click()
 sleep(1)
 
 if args.url is None:
+    print "No Instagram profile found"
     exit()
 
 driver.get(args.url)					# <--- Put instagram page which you need to scrape
