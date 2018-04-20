@@ -12,19 +12,19 @@ parser.add_argument('-l', '--urllink', dest='url', help='Instagram url link you 
 
 args = parser.parse_args()
 
-while (os.path.exists(args.path) is False):
+while not os.path.exists(args.path):
     args.path = raw_input('Please fill path for chromedriver: ')
 driver = webdriver.Chrome(args.path)		# <--- Need to download chromedriver and put its path here
 driver.get('https://www.instagram.com/accounts/login/?hl=vi')
 sleep(1)
 
 usr = driver.find_element_by_name('username')
-while (args.username == ''):
+while args.username == '':
     args.username = raw_input('Please fill your username: ')
 usr.send_keys(args.username)									# <--- Put your username
 
 pwd = driver.find_element_by_name('password')
-while (args.password == ''):
+while args.password == '':
     args.password = raw_input('Please fill your password: ')
 pwd.send_keys(args.password)											# <--- Put your password here
 
@@ -32,7 +32,7 @@ sign_in = driver.find_element_by_tag_name('button')
 sign_in.click()
 sleep(1)
 
-if (args.url is None):
+if args.url is None:
     exit()
 
 driver.get(args.url)					# <--- Put instagram page which you need to scrape
@@ -46,7 +46,7 @@ posts = int(posts)
 images_url = []
 
 # for infinite scrolling page
-for i in range(0,posts/12 + 1):
+for i in range(0, posts/12 + 1):
     driver.execute_script('window.scrollTo(0, document.body.scrollHeight)')
     sleep(1)
     images = driver.find_elements_by_tag_name('img')
