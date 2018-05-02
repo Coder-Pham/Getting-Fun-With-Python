@@ -3,6 +3,7 @@ from time import sleep
 from urllib import urlretrieve
 import argparse
 import os
+import getpass
 
 parser = argparse.ArgumentParser(prog='Instagram Scraper v1.0', usage='Use -h for help')
 parser.add_argument('-p', '--path', dest='path', default='/home/chromedriver', help='Chromedriver path for execute program')
@@ -25,7 +26,8 @@ usr.send_keys(args.username)									# <--- Put your username
 
 pwd = driver.find_element_by_name('password')
 while args.password == '':
-    args.password = raw_input('Please fill your password: ')
+    # args.password = raw_input('Please fill your password: ')
+    args.password = getpass.getpass('Password: ')
 pwd.send_keys(args.password)											# <--- Put your password here
 
 sign_in = driver.find_element_by_tag_name('button')
@@ -34,6 +36,7 @@ sleep(1)
 
 if args.url is None:
     print "No Instagram profile found"
+    driver.close()
     exit()
 
 driver.get(args.url)					# <--- Put instagram page which you need to scrape
