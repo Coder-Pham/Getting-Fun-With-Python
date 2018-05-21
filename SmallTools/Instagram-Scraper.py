@@ -5,17 +5,23 @@ import argparse
 import os
 import getpass
 
-parser = argparse.ArgumentParser(prog='Instagram Scraper v1.0', usage='Use -h for help')
-parser.add_argument('-p', '--path', dest='path', default='/home/chromedriver', help='Chromedriver path for execute program')
-parser.add_argument('-u', '--username', dest='username', default='', help='Your Instagram username')
-parser.add_argument('-w', '--password', dest='password', default='', help='Your Instagram password')
-parser.add_argument('-l', '--urllink', dest='url', help='Instagram url link you want to scrape')
+parser = argparse.ArgumentParser(
+    prog='Instagram Scraper v1.0', usage='Use -h for help')
+parser.add_argument('-p', '--path', dest='path', default='/home/chromedriver',
+                    help='Chromedriver path for execute program')
+parser.add_argument('-u', '--username', dest='username',
+                    default='', help='Your Instagram username')
+parser.add_argument('-w', '--password', dest='password',
+                    default='', help='Your Instagram password')
+parser.add_argument('-l', '--urllink', dest='url',
+                    help='Instagram url link you want to scrape')
 
 args = parser.parse_args()
 
 while not os.path.exists(args.path):
     args.path = raw_input('Please fill path for chromedriver: ')
-driver = webdriver.Chrome(args.path)		# <--- Need to download chromedriver and put its path here
+# <--- Need to download chromedriver and put its path here
+driver = webdriver.Chrome(args.path)
 driver.get('https://www.instagram.com/accounts/login/?hl=vi')
 sleep(1)
 
@@ -50,7 +56,7 @@ posts = int(posts)
 images_url = []
 
 # for infinite scrolling page
-for i in range(0, posts/12 + 1):
+for i in range(0, posts / 12 + 1):
     driver.execute_script('window.scrollTo(0, document.body.scrollHeight)')
     sleep(1)
     images = driver.find_elements_by_tag_name('img')
