@@ -19,9 +19,9 @@ parser.add_argument('-l', '--urllink', dest='url',
 args = parser.parse_args()
 
 while not os.path.exists(args.path):
-    args.path = input('Please fill path for chromedriver: ')
+    args.path = input('Please fill path for opera driver: ')
 # <--- Need to download chromedriver and put its path here
-driver = webdriver.Chrome(args.path)
+driver = webdriver.Opera(args.path)
 driver.get('https://www.instagram.com/accounts/login/?hl=vi')
 sleep(1)
 
