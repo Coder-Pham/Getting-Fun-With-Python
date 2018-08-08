@@ -2,7 +2,7 @@ import os
 import shutil
 
 dest = input("Your destination for .vscode: ")
-src = 'D:\\Basic_Python\\vscode-support\\'
+src = 'vscode-support\\'
 os.makedirs(dest + '\\.vscode')
 dest = dest + '\\.vscode'
 
