@@ -1,5 +1,6 @@
 from PIL import Image
 import time
+import os
 
 def hexcode(r, g, b):
     return '%02x%02x%02x' % (r, g, b)
@@ -13,7 +14,7 @@ if __name__ == '__main__':
     second = time.time()
 
     img = Image.open(File)
-    img.rotate(90)
+    img = img.rotate(90, expand=1)
     width, height = img.size
 
     content = '''
@@ -41,7 +42,7 @@ if __name__ == '__main__':
         }
     </style>
 
-    <table cellpadding='0' cellspacing='0' >
+    <table cellpadding="0" cellspacing="0">
     '''
 
     for x in range(width):
