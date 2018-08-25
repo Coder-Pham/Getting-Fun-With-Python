@@ -10,18 +10,16 @@ def main():
      _   _______________  ___  ____  ______  _____  ___  ____  ___  ______
     | | / / __/ ___/ __ \/ _ \/ __/ / __/ / / / _ \/ _ \/ __ \/ _ \/_  __/
     | |/ /\ \/ /__/ /_/ / // / _/  _\ \/ /_/ / ___/ ___/ /_/ / , _/ / /   
-    |___/___/\___/\____/____/___/ /___/\____/_/  /_/   \____/_/|_| /_/    
-    ''')
+    |___/___/\___/\____/____/___/ /___/\____/_/  /_/   \____/_/|_| /_/    ''')
 
     print(Fore.LIGHTBLUE_EX +
-          "Dev by Coder-Pham".center(os.get_terminal_size().columns))
-    print("\n"*2)
+          "Dev by Coder-Pham\n".center(os.get_terminal_size().columns))
     print(Style.RESET_ALL)
-    print("Option for support in VSCode:")
-    print("1. C++")
-    print("2. Java\n")
-    chose = input("Your option: ")
-    dest = input("Your destination folder: ")
+    print('{:^44s}'.format("Option for support in VSCode:"))
+    print('{:>15s}'.format("1. C++"))
+    print('{:>17s}'.format("2. Java\n"))
+    chose = input('{:>20s}'.format("Your option: "))
+    dest = input('{:>32s}'.format("Your destination folder: "))
 
     # Select language folder
     if chose.upper() == 'C++':
@@ -53,3 +51,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    wait = input()
