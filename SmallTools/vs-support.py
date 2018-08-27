@@ -28,9 +28,9 @@ def main():
         src = 'vscode-support\\Java\\'
 
     # Copy - create
-    if not os.path.isdir(dest + '.vscode'):
-        os.makedirs(dest + '.vscode')
-    dest += '.vscode'
+    if not os.path.isdir(dest + '\\.vscode'):
+        os.makedirs(dest + '\\.vscode')
+    dest += '\\.vscode'
     files = os.listdir(src)
     for file_name in files:
         shutil.copy2(src + file_name, dest)
