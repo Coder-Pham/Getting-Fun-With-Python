@@ -23,17 +23,17 @@ def main():
 
     # Select language folder
     if chose.upper() == 'C++':
-        src = 'vscode-support\\C++\\'
+        src = os.path.join("vscode-support", "C++")
     else:
-        src = 'vscode-support\\Java\\'
+        src = os.path.join("vscode-support", "Java")
 
     # Copy - create
-    if not os.path.isdir(dest + '\\.vscode'):
-        os.makedirs(dest + '\\.vscode')
-    dest += '\\.vscode'
+    if not os.path.isdir(os.path.join(dest, ".vscode")):
+        os.makedirs(os.path.join(dest, ".vscode"))
+    dest = os.path.join(dest, ".vscode")
     files = os.listdir(src)
     for file_name in files:
-        shutil.copy2(src + file_name, dest)
+        shutil.copy2(os.path.join(src, file_name), dest)
 
     # Done - Print warnings
     if chose.upper() == 'C++':
