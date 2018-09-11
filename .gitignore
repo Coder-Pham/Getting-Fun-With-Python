@@ -102,8 +102,8 @@ ENV/
 .vscode
 
 # Test result
-.xlsx
-.xls
-.docx
-.doc
-.html 
+*.xlsx
+*.xls
+*.docx
+*.doc
+*.html 
