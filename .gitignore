@@ -107,3 +107,5 @@ ENV/
 *.docx
 *.doc
 *.html 
+test*.*
+result*.*
