@@ -85,6 +85,10 @@ This settings is for VSCode, some paths are needed to check because of differenc
     },
   ],
   "java.home": "C:\\Program Files\\Java\\jdk1.8.0_181",
+  "workbench.colorTheme": "Dark+ Material",
+  "workbench.iconTheme": "material-icon-theme",
+  "window.titleBarStyle": "custom",
+  "markdown.previewFrontMatter": "show",
 }
 ```
 
@@ -128,12 +132,32 @@ There are 3 must-have packages I installed in every environments:
   + pylint
   + autopep8 (channel **conda-forge**)
   + ipython
+  + pyinstaller (channel **conda-forge**) (optional)
+  + nuitka (optional but must need **mingw_w64** in system)
 
 There are some environments I'm working on it:
-  + **IMG_VID**: *pillow* and *opencv2*
+  + **IMG_MANIP**: *pillow* and *opencv2*
   + **WEB_TEST**: *selenium*
-  + **WEB**: *Django*
   + **CRAWL**: *BeautifulSoup4*, *requests* and *PyQT*
+  <!-- + **WEB**: *Django* -->
+
+There are some problems with **pyinstaller** and **opencv2**. They don't work well with each other much, where compile python script, **pyinstaller** will miss some dll module in **opencv2**. So must check it out and copy to *dist* folder:
+  + opencv_datasets*.dll
+  + opencv_dnn_objdetect*.dll
+  + opencv_dpm*.dll
+  + opencv_ffmpeg*.dll
+  + opencv_stereo*.dll
+  + opencv_structured_light*.dll
+  + opencv_superres*.dll
+  + opencv_videostab*.dll
+  + opencv_xobjdetect*.dll
+
+(* are depend on *opencv2* version)
+
+But if in portable mode, it can be resolved as:
+```
+pyinstaller --onefile <Python-script.py> --add-binary <env/Library/bin/opencv_ffmpeg*.dll>
+```
 
 ## Java
 I only use Java in few months maybe (hope so) because this is in my curriculum.

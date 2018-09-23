@@ -10,7 +10,8 @@ import time
 from mpmath import mp, pi
 from PIL import Image, ImageDraw, ImageFont
 
-import cv2
+from cv2 import (CAP_PROP_FPS, CAP_PROP_FRAME_COUNT, VideoCapture, VideoWriter,
+                 imread, imwrite, destroyAllWindows)
 
 
 def render_image(frame_no, number):
@@ -53,9 +54,9 @@ def render_image(frame_no, number):
 def main():
     # Get frame from video
     video = input('Video file: ')
-    vidcap = cv2.VideoCapture(video)
+    vidcap = VideoCapture(video)
 
-    print('Total frame: {}'.format(vidcap.get(cv2.CAP_PROP_FRAME_COUNT)))
+    print('Total frame: {}'.format(vidcap.get(CAP_PROP_FRAME_COUNT)))
     print('Printing frames ...')
 
     success, image = vidcap.read()
@@ -63,10 +64,13 @@ def main():
     if success:
         if not os.path.isdir('Frame'):
             os.makedirs('Frame')
+    else:
+        print("Can't find video file")
+        exit()
 
     while success:
-        cv2.imwrite(os.path.join("Frame", "%d.jpg" % count),
-                    image)     # save frame as JPEG file
+        imwrite(os.path.join("Frame", "%d.jpg" % count),
+                image)     # save frame as JPEG file
         success, image = vidcap.read()
         count += 1
     print("Done printing")
@@ -78,18 +82,20 @@ def main():
         render_image(os.path.join("Frame", frame), frame.split('.')[0])
 
     # Write video
-    structure = cv2.imread(os.path.join("Frame", frames[0]))
+    structure = imread(os.path.join("Frame", frames[0]))
     height, width, layers = structure.shape
-    vidwrite = cv2.VideoWriter(
-        'result.mp4', -1, vidcap.get(cv2.CAP_PROP_FPS), (width, height))
+    vidwrite = VideoWriter(
+        'result.AVI', -1, vidcap.get(CAP_PROP_FPS), (width, height))
     for frame in frames:
-        img = cv2.imread(os.path.join("Frame", frame))
+        img = imread(os.path.join("Frame", frame))
         vidwrite.write(img)
+
     cv2.destroyAllWindows()
     vidwrite.release()
 
 
 if __name__ == '__main__':
+    os.system('cls')
     count = time.time()
     main()
     print('Total time: {:0.5f}s\n'.format(time.time() - count))

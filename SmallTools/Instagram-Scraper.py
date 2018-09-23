@@ -40,7 +40,7 @@ def story_download(url, driver):
     stories = list(collections.OrderedDict.fromkeys(stories))
     return stories
 
-
+os.system('cls')
 print(Fore.CYAN + '''
  _____          _                                    _____
 |_   _|        | |                                  /  ___|
@@ -86,7 +86,7 @@ if not driver.current_url == 'https://www.instagram.com':
           'Login takes too much time. Try again with more decent Internet')
     print(Style.RESET_ALL)
     driver.quit()
-    exit(0)
+    exit()
 else:
     driver.get(url)
 

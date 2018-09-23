@@ -107,7 +107,5 @@ ENV/
 *.docx
 *.doc
 *.html 
-test*.*
-result*.*
 [0-9]*.jpg
 [0-9]*.mp4
