@@ -176,3 +176,61 @@ Just install it, I don't use Git Bash much. It just support for *Source Control*
 
 ## Evernote:
 This is a quite handy application for taking note. I have a lot of lesson and technique in programming so it helps me keep things clean and organize.
+
+# How I set up my programming smartphone (Google Pixel)
+So recently, I just bought new Google Pixel for better workflow and maybe explore something new. To make it suits best for me, I upgraded it to Android 9 Pie (Android rootless - maybe will root it later for Black Subtratum Theme). And remember that should always **FACTORY RESET** after updating Android.
+```
+Everything I wrote down here just for backup in future (most of it). I still can use Restore & Backup from Google but careful is better.
+```
+
+Also because Google is developing Dark mode in all apps so I don't need to install Subtratum Theme Engine anymore. Now I just go to Settings -> Display -> Advanced -> Device Theme.
+
+Also I will turn on Dark mode in Youtube and Message. And modify, turn on some built-in gestures. 
+
+Last but not least, I must create voice recognition for Google Assistant.
+
+## Code
+### Pydroid 3
+I think this is the best Python editor on Android. Great Intellisense, great typing keyboard, can install packages from pip and I think there are more.
+
+Although, when rotate from horizontal to vertical, I experienced lag and sometimes froze. 
+
+### CPP N-IDE
+It worked out of the box. But there is something wrong with font size, I want to make it smaller because sometimes my code too long to fit in phone size.
+
+But besides that, everything is fine, I think I will have a long time experience with it.
+
+### Termux
+Well I think it's great, I don't need to root my phone to use Terminal. And fun thing is that, it can install package with command line. 
+
+I checked that I can install **Python** from it but sadly not **IPython**. Hope that **IPython** can come to this soon.
+
+### OpenHub
+Just a unofficial app for GitHub, I can check my workflow with my team and find some interesting repository in free times. But with current job, I think I will install something works with BitBucket.
+
+### Codeforces
+Because my current job relates all about Algorithm & Competitive Programming, so with this I always have problems to practice in free times.
+
+## Workflow
+### Dropbox
+Because my team used this, so I installed it to make myself up-to-date with my team.
+
+### Slack
+This is an awesome app. A lot of things happen here, group chat with team, tags for controlling workflow, add-ons for everything (literally EVERYTHING)
+
+### Evernote
+As always my awesome notebook, my book of secret. The great thing about it is that I can sync notes between my laptop and phone.
+
+Ugly thing is that it don't allow you to read old notes offline (not even write for upload later). DAMMIT!!!
+
+## Others
+ + Adobe Acrobat Reader
+ + Google Sheets (Google Docs is builtin but not this :D ?)
+ + Spotify
+ + Shazam
+ + FX File Explorer
+ + Turn Off Screen (Lock Screen)
+ + Any kind of Offline English Dictionary 
+ + AccuBattery
+ + Medium Blog
+ + Send Anywhere
